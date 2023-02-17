@@ -1,0 +1,36 @@
+:host {
+
+  .filter-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .search-box {
+    display: flex;
+    justify-content: center;
+
+    .mat-mdc-fab{
+      background-color: #66B2FF;
+    }
+
+    .mat-mdc-form-field {
+      margin: 0 10px;
+      width: 500px;
+    }
+
+  }
+
+  .select-box {
+
+    .mat-mdc-form-field {
+      margin: 0 5px;
+      width: 200px;
+    }
+
+  }
+
+}

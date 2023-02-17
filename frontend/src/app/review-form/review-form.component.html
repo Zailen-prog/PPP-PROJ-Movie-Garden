@@ -1,0 +1,42 @@
+<div class="page-title">
+  <h2>Reviews</h2>
+</div>
+
+<mat-card class="formCard">
+  <div class="icon-box">
+    <mat-icon>history_edu</mat-icon>
+
+    <h2>Write your awesome opinion!</h2>
+  </div>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <form [formGroup]="reviewForm" (ngSubmit)="submitForm()" class="login-form">
+
+      <div class="flex">
+        <mat-icon class="rate" >star</mat-icon>
+        <span>RATE</span>
+      </div>
+
+  <mat-form-field class="rate-select" appearance="outline">
+    <mat-select formControlName="rating" name="food">
+      <mat-option *ngFor="let rate of ratingNumber" [value]="rate">
+        {{rate}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+      <span class="flex">My review</span>
+      <mat-form-field appearance="outline">
+        <textarea matInput
+                  cdkTextareaAutosize
+                  formControlName="review"
+                  cdkAutosizeMinRows="8"
+                  cdkAutosizeMaxRows="10"></textarea>
+      </mat-form-field>
+
+      <div class="button-container">
+        <primary-button type="submit" [buttonText]=" isEdit ? 'Edit review' : 'Add review'" mat-raised-button></primary-button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
+

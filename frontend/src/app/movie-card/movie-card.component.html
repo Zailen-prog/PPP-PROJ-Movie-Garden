@@ -1,0 +1,50 @@
+<mat-card *ngFor="let movie of movieData" (click)="onClick(movie.id)">
+
+  <mat-grid-list cols="8" rowHeight="80px">
+    <mat-grid-tile
+      [colspan]="1"
+      [rowspan]="2"
+  >
+    <div  class="img-container">
+      <img src="https://www.themoviedb.org/t/p/w500{{ movie.posterPath}}">
+    </div>
+
+    </mat-grid-tile>
+
+    <mat-grid-tile
+      [colspan]="5"
+      [rowspan]="1"
+    >
+      <h2>{{movie.title}}</h2>
+    </mat-grid-tile>
+
+
+    <mat-grid-tile
+      [colspan]="1"
+      [rowspan]="1"
+    >
+      <app-card-rate [rating]="movie.rating"></app-card-rate>
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="1"
+      [rowspan]="2"
+    >
+      <app-action-button [movieId]="movie.id" [actions]="movie.actions" class="actions-box"></app-action-button>
+
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="6"
+      [rowspan]="1"
+
+    >
+      <app-card-info
+        class="flex"
+        [movie]="movie"
+        [detailsMode]="false"
+      >
+      </app-card-info>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</mat-card>
+

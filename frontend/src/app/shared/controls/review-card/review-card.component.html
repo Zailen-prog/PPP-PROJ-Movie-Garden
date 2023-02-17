@@ -1,0 +1,48 @@
+<mat-card *ngFor="let review of reviews">
+  <mat-grid-list cols="6" rowHeight="40px">
+    <mat-grid-tile
+      [colspan]="6"
+      [rowspan]="1"
+      *ngIf="review.user.id == userId"
+    >
+      <div class="my-review-mode">
+        <h2>My review</h2>
+        <primary-button (click)="editReview(review.movie.id, review.rating, review.review)" buttonText="Edit"></primary-button>
+      </div>
+
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="1"
+      [rowspan]="4"
+    >
+      <div class="flex">
+        <mat-icon>
+          account_circle
+        </mat-icon>
+        <div> {{review.user.username}}</div>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="4"
+      [rowspan]="4"
+    >
+      {{review.review}}
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="1"
+      [rowspan]="2"
+    >
+      {{review.reviewPostedAt.slice(0, 10)}}
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="1"
+      [rowspan]="2"
+    >
+      <app-card-rate [rating]="review.rating"></app-card-rate>
+    </mat-grid-tile>
+
+
+
+
+  </mat-grid-list>
+</mat-card>

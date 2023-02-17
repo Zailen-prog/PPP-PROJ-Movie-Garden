@@ -1,0 +1,11 @@
+<ng-container *ngIf="isLogin">
+  <button  [ngClass]="{'favoriteClicked': actions.isFavorite }" (click)="onFavoriteClick($event)" title="add to favorites" mat-icon-button>
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button  [ngClass]="{'toWatchClicked': actions.isToWatch }" (click)="onToWatchClick($event)" title="add to watch" mat-icon-button>
+    <mat-icon>visibility</mat-icon>
+  </button>
+  <button  [ngClass]="{'watchedClicked': actions.isWatched }" (click)="onWatched($event)" title="watched" mat-icon-button>
+    <mat-icon>check_circle</mat-icon>
+  </button>
+</ng-container>

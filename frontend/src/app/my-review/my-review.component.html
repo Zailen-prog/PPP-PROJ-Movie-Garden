@@ -1,0 +1,54 @@
+<mat-card *ngFor="let review of reviews">
+  <mat-grid-list  cols="7" rowHeight="50px">
+    <mat-grid-tile
+      [colspan]="2"
+      [rowspan]="6"
+    >
+      <div  class="img-container">
+        <img src="https://www.themoviedb.org/t/p/w500{{ review.movie.posterPath}}">
+      </div>
+
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="4"
+      [rowspan]="2"
+    >
+      <h2>{{review.movie.title}}</h2>
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="1"
+      [rowspan]="2"
+    >
+      <div class="flex">
+        <primary-button (click)="editReview(review.movie.id, review.rating, review.review)" buttonText="Edit review"></primary-button>
+        <delete-button (click)="deleteReview(review.movie.id)" buttonText="Delete review"></delete-button>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="2"
+      [rowspan]="1"
+    >
+    <app-card-rate [rating]="review.rating"></app-card-rate>
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="3"
+      [rowspan]="1"
+    >
+      <div class="date-box">
+        {{review.reviewPostedAt.slice(0, 10)}}
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="5"
+      [rowspan]="3"
+    >
+
+      <div class="textBox">
+        {{review.review}}
+      </div>
+    </mat-grid-tile>
+
+
+
+  </mat-grid-list>
+</mat-card>

@@ -1,0 +1,19 @@
+<section class="container">
+
+  <aside class="menu">
+    <h2>Favorites movies</h2>
+
+
+  </aside>
+
+  <aside >
+
+    <app-movie-card
+      *ngIf="favoriteMovie"
+      [movieData]="favoriteMovie"
+    >
+
+    </app-movie-card>
+  </aside>
+
+</section>

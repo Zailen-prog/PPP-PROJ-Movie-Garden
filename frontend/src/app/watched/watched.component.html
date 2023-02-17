@@ -1,0 +1,19 @@
+<section class="container">
+
+  <aside class="menu">
+    <h2>Watched movies</h2>
+
+
+  </aside>
+
+  <aside class="product-table">
+
+<app-movie-card
+  *ngIf="watchedMovie"
+  [movieData]="watchedMovie"
+>
+
+</app-movie-card>
+  </aside>
+
+</section>

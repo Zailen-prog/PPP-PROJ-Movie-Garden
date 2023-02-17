@@ -1,0 +1,37 @@
+
+<div class="flex">
+    <mat-icon>schedule</mat-icon>
+    <div class="name-box">Runtime:</div>
+    <div>{{movie.runtime}} min</div>
+</div>
+<div class="flex">
+    <mat-icon>calendar_today</mat-icon>
+    <div class="name-box">Release date:</div>
+    <div>{{movie.releaseDate}}</div>
+</div>
+<div *ngIf="this.movie.genres.length !== 0" class="flex">
+    <mat-icon>movie</mat-icon>
+    <div class="name-box">Genres:</div>
+    <div >{{movie.genres.join(' /  ') }}</div>
+</div>
+
+  <ng-container *ngIf="detailsMode">
+    <div class="flex">
+      <mat-icon>language</mat-icon>
+      <div class="name-box">Language: </div>
+      <div>{{movie.language}}</div>
+    </div>
+    <div class="flex">
+      <div class="flex">
+        <mat-icon>edit</mat-icon>
+        <div class="name-box">Writers:</div>
+      </div>
+      <div>{{movie.writers.join(', ')}}</div>
+    </div>
+    <div  class="flex">
+      <mat-icon>videocam</mat-icon>
+      <div class="name-box">Directors:</div>
+      <div >{{movie.directors.join(' /  ') }}</div>
+    </div>
+  </ng-container>
+

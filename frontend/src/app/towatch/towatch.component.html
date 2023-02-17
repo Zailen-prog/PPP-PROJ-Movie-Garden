@@ -1,0 +1,19 @@
+<section class="container">
+
+  <aside class="menu">
+    <h2>To watch movies</h2>
+
+
+  </aside>
+
+  <aside >
+
+    <app-movie-card
+      *ngIf="toWatchMovie"
+      [movieData]="toWatchMovie"
+    >
+
+    </app-movie-card>
+  </aside>
+
+</section>

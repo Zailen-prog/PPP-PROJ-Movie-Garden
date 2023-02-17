@@ -1,0 +1,37 @@
+
+<mat-card class="formCard">
+  <div class="icon-box">
+<!--    <mat-icon  fontIcon="account_circle"></mat-icon>-->
+
+    <mat-icon>theater_comedy</mat-icon>
+  </div>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="submitForm()" class="login-form">
+          <mat-form-field appearance="outline">
+              <mat-label>Nazwa użytkownika</mat-label>
+              <input type="text" matInput formControlName="userName">
+
+              <mat-error
+                  *ngIf="this.loginForm.get('userName')?.touched && this.loginForm.get('userName')?.hasError('required')">
+                  To pole jest wymagane.
+              </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" >
+              <mat-label>Hasło</mat-label>
+              <input type="password" matInput formControlName="password">
+
+              <mat-error
+                  *ngIf="this.loginForm.get('password')?.touched && this.loginForm.get('password')?.hasError('required')">
+                  To pole jest wymagane.
+              </mat-error>
+          </mat-form-field>
+
+          <div class="button-container">
+              <button type="submit" mat-raised-button>Submit</button>
+          </div>
+      </form>
+  </mat-card-content>
+</mat-card>
+

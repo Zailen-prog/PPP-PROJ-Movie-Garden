@@ -1,0 +1,16 @@
+:host {
+  .product-container {
+    padding: 20px 100px;
+
+    .product-menu {
+      font-family: "Audiowide", sans-serif;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+    }
+    .filters {
+      min-width: 800px;
+      width: 80%;
+    }
+  }
+}

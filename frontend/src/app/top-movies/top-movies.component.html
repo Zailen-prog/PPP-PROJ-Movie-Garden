@@ -1,0 +1,18 @@
+<section class="product-container">
+
+  <aside class="product-menu">
+    <h2>Top 50 Movies</h2>
+    <app-filters (filterArray)="onFilterMovies($event)" class="filters"></app-filters>
+
+  </aside>
+
+  <aside class="product-table">
+    <app-movie-card
+      *ngIf="dataSource"
+      [movieData]="dataSource"
+    >
+    </app-movie-card>
+
+  </aside>
+
+</section>

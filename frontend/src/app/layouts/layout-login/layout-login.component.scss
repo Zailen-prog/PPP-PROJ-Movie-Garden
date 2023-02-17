@@ -1,0 +1,54 @@
+:host {
+  .flex {
+    display: flex;
+    margin-left: auto;
+
+    .button {
+      margin-right: 5px;
+    }
+  }
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+  }
+  .toolbar-list-button {
+    display: flex;
+    margin-left: 30px;
+
+    > button {
+      min-width: fit-content;
+    }
+  }
+
+  .mat-icon {
+    color: #FDCC0D;
+    margin: 0 5px;
+  }
+
+  .mat-toolbar {
+    background-color:#001E3C;
+    position: sticky;
+    flex-shrink: 0;
+  }
+  .mat-drawer-container {
+    background: #091929;
+    flex-grow: 1;
+    overflow: auto;
+  }
+
+  .mat-drawer {
+    background-color: #001E3C;
+    min-width: 150px;
+    //border-right: 0.1rem solid #0059B2;
+
+  }
+
+  .button {
+    display: flex;
+    margin-left: auto;
+  }
+
+
+}

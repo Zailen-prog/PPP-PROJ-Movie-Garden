@@ -1,0 +1,62 @@
+<mat-card *ngIf="movieDetails">
+  <mat-grid-list cols="7" rowHeight="80px">
+    <mat-grid-tile
+      [colspan]="4"
+      [rowspan]="1"
+    >
+      <h2>
+        {{movieDetails.title}}
+      </h2>
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="1"
+      [rowspan]="1"
+    >
+      <app-card-rate [rating]="movieDetails.rating"></app-card-rate>
+
+    </mat-grid-tile>
+
+    <mat-grid-tile
+      [colspan]="2"
+      [rowspan]="1"
+    >
+      <app-action-button></app-action-button>
+    </mat-grid-tile>
+
+    <mat-grid-tile
+      [colspan]="3"
+      [rowspan]="6"
+    >
+      <div  class="img-container">
+        <img src="https://www.themoviedb.org/t/p/w500{{ movieDetails.posterPath}}">
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="4"
+      [rowspan]="2"
+    >
+      <div class="overview">
+        {{movieDetails.overview}}
+        <mat-divider></mat-divider>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="4"
+      [rowspan]="4"
+    >
+      <app-card-info
+        [movie]="movieDetails"
+        [detailsMode]="true"
+        class="info-box"
+      ></app-card-info>
+    </mat-grid-tile>
+
+    <mat-grid-tile
+      [colspan]="7"
+      [rowspan]="1"
+    >
+
+  <primary-button [buttonText]="'SHOW USERS REVIEW'" (click)="showAllReview(movieDetails.id)"></primary-button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-card>

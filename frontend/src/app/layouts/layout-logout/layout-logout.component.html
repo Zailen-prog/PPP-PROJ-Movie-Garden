@@ -1,0 +1,12 @@
+<div class="app-container">
+  <mat-toolbar class="mat-elevation-z8">
+    <mat-icon>grade</mat-icon>
+    <span> MOVIE GARDEN </span>
+    <mat-icon>grade</mat-icon>
+    <primary-button  *ngIf="isLogin" class="button" [buttonText]="'LOGOUT'" (click)="logout()">
+    </primary-button>
+  </mat-toolbar>
+
+  <router-outlet></router-outlet>
+
+</div>

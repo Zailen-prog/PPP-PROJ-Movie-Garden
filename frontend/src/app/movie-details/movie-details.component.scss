@@ -1,0 +1,57 @@
+:host {
+
+  > mat-card {
+    width: 900px;
+    margin: 50px auto 0;
+    height: auto;
+    padding: 10px;
+    background-color: #001E3C;
+    font-weight: 400;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    box-shadow: 0.2rem 0.2rem 0.1rem rgb(0 89 178/ 40%);
+
+    .info-box {
+      display: flex;
+      height: 90%;
+      padding-left: 20px;
+      justify-content: space-between;
+      flex-direction: column;
+      margin-right: auto;
+
+    }
+
+    .mat-divider {
+      margin-top: 10px;
+    }
+
+
+    .flex {
+      display: flex;
+      margin-right: auto;
+
+    }
+    .overview {
+      padding: 0 20px;
+      overflow: auto;
+      height: 100%;
+    }
+
+    .mat-grid-tile {
+
+
+      .img-container {
+        width:100%;
+        height:100%;
+
+        background-color: #091929;
+
+      }
+      .img-container > img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+
+      }
+    }
+  }
+}

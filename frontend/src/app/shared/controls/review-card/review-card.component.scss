@@ -1,0 +1,38 @@
+
+
+:host {
+  .flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+  }
+
+  .my-review-mode {
+    margin: 0 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #66B2FF;
+  }
+
+  > mat-card {
+    width: 900px;
+    margin: 10px auto 0;
+    height: auto;
+    padding: 10px;
+    background-color: #001E3C;
+    font-weight: 400;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    box-shadow: 0.2rem 0.2rem 0.1rem rgb(0 89 178/ 40%);
+  }
+  .mat-grid-tile {
+    //background-color: #66B2FF;
+  }
+  .mat-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 70px;
+  }
+}

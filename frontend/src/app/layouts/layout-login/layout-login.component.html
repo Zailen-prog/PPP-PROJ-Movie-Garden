@@ -1,0 +1,63 @@
+<div class="app-container">
+  <mat-toolbar class="mat-elevation-z8">
+    <mat-icon>grade</mat-icon>
+    <span><b>MOVIE GARDEN</b></span>
+    <mat-icon>grade</mat-icon>
+    <mat-action-list class="toolbar-list-button">
+      <button mat-list-item routerLink="/test">
+        All movies
+      </button>
+
+      <button mat-list-item routerLink="/latestMovies">
+        Latest movies
+      </button>
+
+      <button mat-list-item routerLink="/topMovies">
+        Top 50 Movies
+      </button>
+
+
+    </mat-action-list>
+
+    <primary-button  *ngIf="isLogin" class="button" [buttonText]="'LOGOUT'" (click)="logout()">  </primary-button>
+    <div *ngIf="!isLogin" class="flex">
+      <primary-button   class="button" [buttonText]="'LOG IN'" (click)="login()">  </primary-button>
+      <primary-button  class="button" [buttonText]="'REGISTER'" (click)="register()">  </primary-button>
+    </div>
+
+  </mat-toolbar>
+  <mat-drawer-container *ngIf="isLogin"  class="example-container">
+    <mat-drawer   mode="side" opened>
+      <mat-divider></mat-divider>
+      <mat-action-list>
+        <button mat-list-item routerLink="/myReview">
+          My reviews
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-list-item routerLink="/favorites">
+          Favorites
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-list-item routerLink="/towatch">
+          To watch list
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-list-item routerLink="/watched">
+          Watched
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-list-item routerLink="/myAccount">
+          My account
+        </button>
+        <mat-divider></mat-divider>
+      </mat-action-list>
+    </mat-drawer>
+
+    <mat-drawer-content>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  <div *ngIf="!isLogin">
+    <router-outlet></router-outlet>
+  </div>
+</div>

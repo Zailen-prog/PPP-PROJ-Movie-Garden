@@ -1,0 +1,39 @@
+
+<div >
+    <form class="filter-box" [formGroup]="filtersForm">
+
+      <div class="search-box">
+        <mat-form-field appearance="outline">
+          <mat-label>Search title</mat-label>
+          <input type="text" matInput formControlName="title">
+        </mat-form-field>
+        <button (click)="filterMovies()" mat-fab>
+          <mat-icon>search</mat-icon>
+        </button>
+      </div>
+
+
+      <div class="select-box">
+
+        <mat-form-field class="rate-select" appearance="outline">
+          <mat-label>Genres</mat-label>
+          <mat-select formControlName="genre" (selectionChange)="filterMovies()">
+            <mat-option *ngFor="let genre of genres" [value]="genre === 'All' ? '' : genre">
+              {{genre}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="rate-select" appearance="outline">
+          <mat-label>Year of production</mat-label>
+          <mat-select formControlName="yearOfProduction" (selectionChange)="filterMovies()">
+            <mat-option *ngFor="let year of yearOfProduction" [value]="year === 'All' ? '' : year">
+              {{year}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+    </form>
+</div>
+
